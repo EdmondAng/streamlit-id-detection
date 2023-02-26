@@ -1,2 +1,6 @@
-# streamlit-id-detection
-YOLOv5 streamlit deployment for ID card and passport detection
+# ID Card and Passport Detection
+This streamlit app is designed to distinguish ID card and passport submissions. The underlying model uses YOLOv5l, trained on 500 ID card and 500 passport photos from Europe and North/West Asia. You may find out more about the model behind the app by visiting my [Github](https://github.com/EdmondAng/my_materials) > "Object detection using YOLOv5 for ID cards and passports".
+
+Credits:
+- dataset from [University of La Rochelle](http://l3i-share.univ-lr.fr/MIDV2020/midv2020.html)
+- streamlit guide from [Thepbordin](https://github.com/thepbordin/YOLOv5-Streamlit-Deployment)
