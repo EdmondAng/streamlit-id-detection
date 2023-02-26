@@ -76,7 +76,7 @@ def main():
 
     st.header('🪪 ID Detection')
     st.subheader('⬅️ Please select an option on the left.')
-    st.subheader('⬅️ Labels: 0 - ID card, 1 - Passport')
+    st.subheader('⬅️ Label legend: 0 - ID card, 1 - Passport')
     st.sidebar.markdown("https://github.com/EdmondAng/streamlit-id-detection.git")
     imageInput(datasrc)
 
