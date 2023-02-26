@@ -71,7 +71,7 @@ def main():
     # -- Sidebar
     st.sidebar.title('⚙️Options:')
     st.sidebar.markdown("You may choose to use an image from my test dataset, or upload your own. Please select an input source:")
-    datasrc = st.sidebar.radio(, ['From test set', 'Upload your own data'])
+    datasrc = st.sidebar.radio("", ['From test set', 'Upload your own data'])
     
     # -- End of Sidebar
 
