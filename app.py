@@ -7,10 +7,7 @@ from datetime import datetime
 import os
 
 ## CFG for model weights
-cfg_enable_url_download = True
-if cfg_enable_url_download:
-    url = "https://drive.google.com/uc?export=download&id=1PREN04d-tR9Au3OOpS5cyzvfdh4ps1pL" #Configure this if you set cfg_enable_url_download to True
-    cfg_model_path = f"models/best.pt" #config model path from url name
+cfg_model_path = "best.pt"
 
 ## END OF CFG
 
@@ -88,12 +85,3 @@ if __name__ == '__main__':
   
     main()
 
-# Downlaod Model from url.    
-@st.cache
-def loadModel():
-    start_dl = time.time()
-    model_file = wget.download(url, out="models/")
-    finished_dl = time.time()
-    print(f"Model Downloaded, ETA:{finished_dl-start_dl}")
-if cfg_enable_url_download:
-    loadModel()
