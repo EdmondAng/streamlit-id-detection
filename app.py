@@ -9,9 +9,6 @@ import os
 ## CFG for model weights
 cfg_model_path = "best.pt"
 
-## END OF CFG
-
-
 def imageInput(src):
     
     if src == 'Upload your own data.':
