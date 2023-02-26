@@ -37,6 +37,16 @@ def threaded(func):
     return wrapper
 
 
+def join_threads(verbose=False):
+    # Join all daemon threads, i.e. atexit.register(lambda: join_threads())
+    main_thread = threading.current_thread()
+    for t in threading.enumerate():
+        if t is not main_thread:
+            if verbose:
+                print(f'Joining thread {t.name}')
+            t.join()
+
+
 def notebook_init(verbose=True):
     # Check system software and hardware
     print('Checking setup...')
@@ -59,7 +69,7 @@ def notebook_init(verbose=True):
     if verbose:
         gb = 1 << 30  # bytes to GiB (1024 ** 3)
         ram = psutil.virtual_memory().total
-        total, used, free = shutil.disk_usage("/")
+        total, used, free = shutil.disk_usage('/')
         display.clear_output()
         s = f'({os.cpu_count()} CPUs, {ram / gb:.1f} GB RAM, {(total - free) / gb:.1f}/{total / gb:.1f} GB disk)'
     else:
