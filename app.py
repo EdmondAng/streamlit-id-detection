@@ -31,7 +31,7 @@ def imageInput(src):
             model = torch.hub.load('ultralytics/yolov5', 'custom', path=cfg_model_path, force_reload=True) 
             model.cpu()
             pred = model(imgpath)
-            pred.render()  # render bbox in image
+            pred.render()  # render box in image
             for im in pred.ims:
                 im_base64 = Image.fromarray(im)
                 im_base64.save(outputpath)
@@ -40,7 +40,7 @@ def imageInput(src):
             
             img_ = Image.open(outputpath)
             with col2:
-                st.image(img_, caption='Model Prediction(s)', use_column_width='always')
+                st.image(img_, caption='Model Prediction', use_column_width='always')
 
     elif src == 'From test set.': 
         # Image selector slider
@@ -57,7 +57,7 @@ def imageInput(src):
                 #call Model prediction--
                 model = torch.hub.load('ultralytics/yolov5', 'custom', path=cfg_model_path, force_reload=True) 
                 pred = model(image_file)
-                pred.render()  # render bbox in image
+                pred.render()  # render box in image
                 for im in pred.ims:
                     im_base64 = Image.fromarray(im)
                     im_base64.save(os.path.join('data/outputs', os.path.basename(image_file)))
@@ -69,13 +69,13 @@ def imageInput(src):
 
 def main():
     # -- Sidebar
-    st.sidebar.title('⚙️Options')
-    datasrc = st.sidebar.radio("Select input source.", ['From test set.', 'Upload your own data.'])
+    st.sidebar.title('⚙️Options:')
+    datasrc = st.sidebar.radio("Select input source:", ['From test set.', 'Upload your own data.'])
     
     # -- End of Sidebar
 
     st.header('🪪 ID Detection')
-    st.subheader('⬅️ Please select or upload an image for prediction on the left.')
+    st.subheader('⬅️ Please select an option on the left.')
     st.sidebar.markdown("https://github.com/EdmondAng/streamlit-id-detection.git")
     imageInput(datasrc)
 
@@ -84,4 +84,3 @@ def main():
 if __name__ == '__main__':
   
     main()
-
