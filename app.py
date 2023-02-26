@@ -24,7 +24,7 @@ def imageInput(src):
             ts = datetime.timestamp(datetime.now())
             imgpath = os.path.join('data/uploads', str(ts)+image_file.name)
             outputpath = os.path.join('data/outputs', os.path.basename(imgpath))
-            with open(imgpath, mode="wb") as f:
+            with Image.open(imgpath, mode="wb") as f:
                 f.write(image_file.getbuffer())
 
             #call Model prediction--
