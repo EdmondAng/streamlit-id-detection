@@ -9,7 +9,7 @@ import os
 ## CFG for model weights
 cfg_enable_url_download = True
 if cfg_enable_url_download:
-    url = "https://drive.google.com/drive/folders/1aZepXGJl2dusY64UcT3OAIMvx6bkPeV0?usp=sharing" #Configure this if you set cfg_enable_url_download to True
+    url = "https://drive.google.com/uc?export=download&id=1PREN04d-tR9Au3OOpS5cyzvfdh4ps1pL" #Configure this if you set cfg_enable_url_download to True
     cfg_model_path = f"models/best.pt" #config model path from url name
 
 ## END OF CFG
