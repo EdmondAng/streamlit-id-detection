@@ -77,7 +77,7 @@ def main():
     st.header('🪪 ID Detection')
     st.subheader('Please choose an option on the left.')
     st.subheader('Legend for prediction labels: 0 - ID card, 1 - Passport')
-    st.sidebar.markdown("https://github.com/EdmondAng/streamlit-id-detection.git")
+    st.sidebar.markdown("You can find my streamlit deployment codes here: https://github.com/EdmondAng/streamlit-id-detection.git")
     imageInput(datasrc)
 
     
