@@ -14,7 +14,7 @@ cfg_model_path = "best.pt"
 
 def imageInput(src):
     
-    if src == 'Upload your own data.':
+    if src == 'Upload your own data':
         image_file = st.file_uploader("Upload An Image", type=['png', 'jpeg', 'jpg'])
         col1, col2 = st.columns(2)
         if image_file is not None:
@@ -42,7 +42,7 @@ def imageInput(src):
             with col2:
                 st.image(img_, caption='Model Prediction', use_column_width='always')
 
-    elif src == 'From test set.': 
+    elif src == 'From test set': 
         # Image selector slider
         imgpath = glob.glob('data/images/*')
         imgsel = st.slider('Please select an image from the test set.', min_value=1, max_value=len(imgpath), step=1) 
@@ -70,13 +70,13 @@ def imageInput(src):
 def main():
     # -- Sidebar
     st.sidebar.title('⚙️Options:')
-    datasrc = st.sidebar.radio("Select input source:", ['From test set.', 'Upload your own data.'])
+    datasrc = st.sidebar.radio("You may choose to use an image from my test dataset, or upload your own. Please select an input source:", ['From test set', 'Upload your own data'])
     
     # -- End of Sidebar
 
     st.header('🪪 ID Detection')
-    st.subheader('⬅️ Please select an option on the left.')
-    st.text('Label legend: 0 - ID card, 1 - Passport')
+    st.subheader('Please choose an option on the left.')
+    st.subheader('Legend for prediction labels: 0 - ID card, 1 - Passport')
     st.sidebar.markdown("https://github.com/EdmondAng/streamlit-id-detection.git")
     imageInput(datasrc)
 
