@@ -70,8 +70,8 @@ def imageInput(src):
 def main():
     # -- Sidebar
     st.sidebar.title('⚙️Options:')
-    st.sidebar.markdown("You may choose to use an image from my test dataset, or upload your own. Please select an input source:")
-    datasrc = st.sidebar.radio(['From test set', 'Upload your own data'])
+    st.sidebar.markdown("You may choose to use an image from my test dataset, or upload your own.")
+    datasrc = st.sidebar.radio("Please select an input source:", ['From test set', 'Upload your own data'])
     
     # -- End of Sidebar
 
