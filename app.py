@@ -76,8 +76,8 @@ def main():
     # -- End of Sidebar
 
     st.header('🪪 ID Detection')
-    st.subheader('Please choose an option on the left.')
-    st.subheader('Legend for prediction labels: 0 - ID card, 1 - Passport')
+    st.subheader('Please choose an option on the left side bar.')
+    st.markdown('How to intepret model prediction results:\n   - if an ID card / passport is predicted by the model, the model will display either class followed by a numeric confidence score\n   - if the model did not detect any ID card / passport, the original image will be returned (without any boxes drawn) ')
     st.sidebar.markdown("You can find my streamlit deployment codes here: https://github.com/EdmondAng/streamlit-id-detection.git")
     imageInput(datasrc)
 
